@@ -31,7 +31,6 @@ describe("utils.setCharset(type, charset)", function () {
   it("should do anything without type", function () {
     assert.strictEqual(utils.setCharset(), undefined);
   });
-
   it("should return type if not given charset", function () {
     assert.strictEqual(utils.setCharset("text/html"), "text/html");
   });

@@ -36,7 +36,9 @@ describe("res", function () {
       request(app)
         .get("/") // Make a GET request to the root
         .expect(200) // Expect a 200 OK status
-        .expect(JSON.parse({ msg: "my-custom-value" }), done); // Expect the header 'X-Custom-Header' to have value 'my-custom-value'
+        .expect(JSON.parse({ msg: "my-custom-value" }), () => {
+          done();
+        }); // Expect the header 'X-Custom-Header' to have value 'my-custom-value'
     });
   });
 });
